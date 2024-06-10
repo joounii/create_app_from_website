@@ -1,0 +1,1 @@
+pyinstaller  --windowed --noupx --name="Trello" --icon "Icon.ico" --add-data "icon.png;." "main.py"

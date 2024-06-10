@@ -9,4 +9,5 @@ You need to install these libraries for the code to work.
 pip install PyQt5
 pip install PyQtWebEngine
 pip install python-dotenv
+pip install pyinstaller
 ```
