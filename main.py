@@ -11,6 +11,10 @@ load_dotenv()
 website_url = os.getenv('WEBSITE_URL')
 application_name = os.getenv('APPLICATION_NAME')
 
+def resource_path(relative_path):
+    base_path = getattr(sys, '_MEIPASS', os.path.dirname(os.path.abspath(__file__)))
+    return os.path.join(base_path, relative_path)
+
 class Browser(QMainWindow):
     def __init__(self):
         super().__init__()
@@ -18,7 +22,9 @@ class Browser(QMainWindow):
         self.browser.setUrl(QUrl(website_url))
         self.setCentralWidget(self.browser)
         self.showMaximized()
-        self.setWindowIcon(QIcon('icon.png'))
+        
+        icon_path = resource_path('icon.png')
+        self.setWindowIcon(QIcon(icon_path))
         
         self.reload_shortcut = QShortcut(QKeySequence('F5'), self)
         self.reload_shortcut.activated.connect(self.reload_page)
