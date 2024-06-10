@@ -3,6 +3,7 @@ import os
 from dotenv import load_dotenv
 from PyQt5.QtCore import *
 from PyQt5.QtWidgets import *
+from PyQt5.QtGui import *
 from PyQt5.QtWebEngineWidgets import *
 
 load_dotenv()
@@ -17,6 +18,7 @@ class Browser(QMainWindow):
         self.browser.setUrl(QUrl(website_url))
         self.setCentralWidget(self.browser)
         self.showMaximized()
+        self.setWindowIcon(QIcon('icon.png'))
 
 app = QApplication(sys.argv)
 QApplication.setApplicationName(application_name)
