@@ -19,6 +19,12 @@ class Browser(QMainWindow):
         self.setCentralWidget(self.browser)
         self.showMaximized()
         self.setWindowIcon(QIcon('icon.png'))
+        
+        self.reload_shortcut = QShortcut(QKeySequence('F5'), self)
+        self.reload_shortcut.activated.connect(self.reload_page)
+        
+    def reload_page(self):
+        self.browser.reload()
 
 app = QApplication(sys.argv)
 QApplication.setApplicationName(application_name)
