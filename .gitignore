@@ -2,3 +2,4 @@
 dist
 build
 main.spec
+get_modul_path.py
